@@ -18,6 +18,6 @@ function githubPagesSpaFallback(): Plugin {
 // https://vite.dev/config/
 export default defineConfig(({ command }) => ({
   plugins: [react(), ...(command === 'build' ? [githubPagesSpaFallback()] : [])],
-  // Project site: https://layer1-studio.github.io/Connect-To-Care/
-  base: command === 'build' ? '/Connect-To-Care/' : '/',
+  // Project site: https://MandithaNanayakkara.github.io/connect-to-care/
+  base: command === 'build' ? '/connect-to-care/' : '/',
 }))
