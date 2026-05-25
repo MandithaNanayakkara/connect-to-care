@@ -1,0 +1,321 @@
+@keyframes ecosystemPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.75;
+  }
+}
+
+@keyframes ecosystemRingSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes ecosystemDraw {
+  from {
+    stroke-dashoffset: 1;
+    opacity: 0.2;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes ecosystemAnchorPop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes ecosystemNodeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ecosystemFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.ecosystem {
+  position: relative;
+  width: 100%;
+  max-width: 24rem;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.ecosystem__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.ecosystem__ring {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 1;
+}
+
+.ecosystem__ring--outer {
+  opacity: 0.12;
+  stroke-dasharray: 6 10;
+}
+
+.ecosystem__ring--inner {
+  opacity: 0.22;
+}
+
+.ecosystem--live .ecosystem__ring--outer {
+  transform-origin: 200px 200px;
+  animation: ecosystemRingSpin 48s linear infinite;
+}
+
+.ecosystem__link {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0.85;
+}
+
+.ecosystem--live .ecosystem__link {
+  animation: ecosystemDraw 1.2s ease forwards;
+  animation-delay: var(--link-delay, 0s);
+}
+
+.ecosystem__anchor {
+  fill: var(--teal-bright);
+  opacity: 0;
+}
+
+.ecosystem--live .ecosystem__anchor {
+  transform-origin: center;
+  animation: ecosystemAnchorPop 0.5s ease forwards;
+  animation-delay: var(--link-delay, 0s);
+}
+
+/* ─── Center hub ─── */
+.ecosystem__hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 7.5rem;
+  height: 7.5rem;
+}
+
+.ecosystem__hub-glow {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 158, 143, 0.35) 0%, transparent 68%);
+  animation: ecosystemPulse 3s ease-in-out infinite;
+}
+
+.ecosystem__hub-ring {
+  position: absolute;
+  inset: -6%;
+  border-radius: 50%;
+  border: 2px solid rgba(26, 158, 143, 0.35);
+}
+
+.ecosystem--live .ecosystem__hub-ring {
+  animation: ecosystemPulse 3s ease-in-out infinite 0.4s;
+}
+
+.ecosystem__hub-core {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 100%);
+  box-shadow:
+    0 8px 28px rgba(13, 33, 55, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.ecosystem__logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  max-width: 2.5rem;
+  margin-bottom: 0.15rem;
+  background: var(--white);
+  padding: 0.2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.ecosystem__hub-role {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  margin-top: 0.1rem;
+}
+
+/* ─── Outer nodes ─── */
+.ecosystem__node {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.75rem 0.45rem 0.55rem;
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 14px rgba(13, 33, 55, 0.08);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--navy);
+  white-space: nowrap;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ecosystem--live .ecosystem__node {
+  animation: ecosystemNodeIn 0.6s ease forwards;
+  animation-delay: var(--node-delay, 0s);
+  opacity: 0;
+}
+
+.ecosystem--live .ecosystem__node:hover {
+  border-color: var(--teal);
+  box-shadow: 0 6px 20px rgba(26, 158, 143, 0.18);
+  opacity: 1;
+}
+
+.ecosystem__node-icon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 3px rgba(26, 158, 143, 0.2);
+  flex-shrink: 0;
+}
+
+.ecosystem__node--top {
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ecosystem__node--left {
+  left: 0;
+  top: 44%;
+  transform: translateY(-50%);
+}
+
+.ecosystem__node--right {
+  right: 0;
+  top: 44%;
+  transform: translateY(-50%);
+}
+
+.ecosystem__node--bottom-left {
+  bottom: 4%;
+  left: 6%;
+}
+
+.ecosystem__node--bottom-right {
+  bottom: 4%;
+  right: 6%;
+}
+
+.ecosystem__node--top {
+  transform: translateX(-50%);
+}
+
+.ecosystem--live .ecosystem__node--top:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.ecosystem__node--left {
+  transform: translateY(-50%);
+}
+
+.ecosystem--live .ecosystem__node--left:hover {
+  transform: translateY(calc(-50% - 2px));
+}
+
+.ecosystem__node--right {
+  transform: translateY(-50%);
+}
+
+.ecosystem--live .ecosystem__node--right:hover {
+  transform: translateY(calc(-50% - 2px));
+}
+
+.ecosystem--live .ecosystem__node--bottom-left:hover,
+.ecosystem--live .ecosystem__node--bottom-right:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem--live .ecosystem__link,
+  .ecosystem--live .ecosystem__anchor,
+  .ecosystem--live .ecosystem__node,
+  .ecosystem--live .ecosystem__ring--outer,
+  .ecosystem__hub-glow,
+  .ecosystem__hub-ring {
+    animation: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .ecosystem--live .ecosystem__node {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .ecosystem__node {
+    font-size: 0.62rem;
+    padding: 0.35rem 0.6rem 0.35rem 0.45rem;
+  }
+
+  .ecosystem__hub {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .ecosystem__hub-name {
+    font-size: 0.48rem;
+  }
+}

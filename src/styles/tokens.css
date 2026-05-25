@@ -1,0 +1,68 @@
+:root {
+  /* Core palette */
+  --navy: #0d2137;
+  --navy-mid: #0f2a45;
+  --navy-deep: #081a2c;
+  --navy-card: #0d2a40;
+  --teal: #1a9e8f;
+  --teal-bright: #22b5a3;
+  --teal-dark: #147a6e;
+  --teal-card: #1e6e64;
+  --cream: #f0ede6;
+  --cream-dark: #e8e4dc;
+  --cream-light: #faf8f4;
+  --white: #ffffff;
+  --grey-300: #c8c4bc;
+  --grey-500: #8a8680;
+  --grey-700: #4a4740;
+  --text: #1a1916;
+
+  /* Semantic surfaces */
+  --surface-page: var(--cream);
+  --surface-header: var(--white);
+  --surface-header-scrolled: rgba(255, 255, 255, 0.97);
+  --surface-footer: var(--navy);
+  --surface-footer-bar: var(--navy-deep);
+  --surface-elevated: var(--white);
+  --border-subtle: rgba(13, 33, 55, 0.08);
+  --border-header: var(--cream-dark);
+  --border-footer: rgba(255, 255, 255, 0.1);
+
+  /* Text on dark surfaces */
+  --text-on-dark: rgba(255, 255, 255, 0.88);
+  --text-on-dark-muted: rgba(255, 255, 255, 0.55);
+  --text-on-dark-faint: rgba(255, 255, 255, 0.38);
+
+  /* Legacy aliases */
+  --bg-off-white: var(--cream-dark);
+  --bg-white: var(--white);
+  --grey-100: var(--cream-dark);
+  --grey-200: var(--grey-300);
+  --grey-400: var(--grey-500);
+  --text-dark: var(--text);
+  --teal-light: rgba(26, 158, 143, 0.15);
+  --navy-dark: var(--navy-mid);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --hero-title: clamp(3rem, 5.5vw, 5rem);
+  --section-title: clamp(2.4rem, 4vw, 3.6rem);
+  --body-size: 1rem;
+  --body-lh: 1.8;
+  --label-size: 0.72rem;
+  --label-spacing: 0.18em;
+  --btn-size: 0.88rem;
+
+  --radius-card: 22px;
+  --radius-pill: 9999px;
+
+  --max-width: 72rem;
+  --section-pad-y: clamp(4rem, 8vw, 6.5rem);
+  --section-pad-x: clamp(1.25rem, 4vw, 2rem);
+  --header-height: 4.75rem;
+  --header-height-scrolled: 4.25rem;
+
+  --shadow-header: 0 1px 0 var(--border-subtle), 0 4px 20px rgba(13, 33, 55, 0.06);
+  --shadow-header-scrolled: 0 1px 0 var(--border-header), 0 8px 28px rgba(13, 33, 55, 0.08);
+}

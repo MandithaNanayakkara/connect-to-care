@@ -1,0 +1,255 @@
+@import './styles/tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--body-size);
+  line-height: var(--body-lh);
+  color: var(--grey-700);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--section-pad-x);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section-label--light {
+  color: var(--teal);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: var(--label-size);
+  font-weight: 500;
+  letter-spacing: var(--label-spacing);
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--section-title);
+  line-height: 1.12;
+  color: var(--navy);
+}
+
+.display-title em,
+.display-title .accent {
+  font-style: italic;
+  color: var(--teal);
+  font-weight: 400;
+}
+
+.display-title--light {
+  color: var(--white);
+}
+
+.display-title--light em {
+  color: var(--teal);
+}
+
+.body-lg {
+  font-size: 1.05rem;
+  line-height: var(--body-lh);
+  color: var(--grey-700);
+  max-width: 42rem;
+}
+
+.section--cream {
+  background: var(--cream);
+}
+
+.section--cream-dark {
+  background: var(--cream-dark);
+}
+
+.section--navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.section-pad {
+  padding-block: var(--section-pad-y);
+}
+
+/* Pill buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: var(--btn-size);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 1.65rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--navy-mid);
+}
+
+.btn--teal {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.btn--teal:hover {
+  background: var(--teal-bright);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--navy);
+  padding-inline: 0;
+}
+
+.btn--ghost::before {
+  content: '— ';
+  color: var(--teal);
+}
+
+.btn--ghost:hover {
+  color: var(--teal-dark);
+}
+
+.btn--arrow::after {
+  content: ' →';
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.section-intro {
+  margin-bottom: 2.5rem;
+}
+
+.section-intro--split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.section-intro__aside {
+  font-size: 0.95rem;
+  color: var(--grey-500);
+  max-width: 22rem;
+  line-height: 1.65;
+  text-align: right;
+}
+
+/* Inner page hero (cream) */
+.page-hero {
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--cream);
+}
+
+.page-hero__inner {
+  max-width: 40rem;
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--section-title);
+  color: var(--navy);
+  line-height: 1.12;
+  margin-bottom: 1rem;
+}
+
+.page-hero__title em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.page-hero__lead {
+  font-size: 1.05rem;
+  line-height: var(--body-lh);
+  color: var(--grey-700);
+}
+
+@media (max-width: 768px) {
+  .section-intro__aside {
+    text-align: left;
+  }
+}

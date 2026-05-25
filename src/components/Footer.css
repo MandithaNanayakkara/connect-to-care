@@ -1,0 +1,123 @@
+.site-footer {
+  background: var(--surface-footer);
+  margin-top: auto;
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 50%, var(--teal) 100%);
+}
+
+.site-footer__main {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-block: 3.75rem 2.5rem;
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.site-footer__logo .site-logo {
+  height: 3rem;
+  max-width: 240px;
+  padding: 0.4rem 0.65rem;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.site-footer__tagline {
+  font-weight: 300;
+  font-size: 0.92rem;
+  color: var(--text-on-dark-muted);
+  line-height: 1.7;
+  max-width: 22rem;
+}
+
+.site-footer__heading {
+  font-size: var(--label-size);
+  font-weight: 500;
+  letter-spacing: var(--label-spacing);
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  margin-bottom: 1rem;
+}
+
+.site-footer__col a,
+.site-footer__col p {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-on-dark-muted);
+  line-height: 1.7;
+  margin-bottom: 0.35rem;
+  transition: color 0.2s;
+}
+
+.site-footer__col a:hover {
+  color: var(--white);
+}
+
+.site-footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem 1.75rem;
+  background: var(--surface-footer-bar);
+  border-top: 1px solid var(--border-footer);
+}
+
+.site-footer__bar p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-on-dark-faint);
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.site-footer__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-footer);
+  color: var(--text-on-dark-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+
+.site-footer__icon:hover {
+  border-color: var(--teal-bright);
+  color: var(--white);
+  background: rgba(26, 158, 143, 0.2);
+}
+
+@media (max-width: 900px) {
+  .site-footer__main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

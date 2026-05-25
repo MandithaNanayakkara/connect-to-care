@@ -1,0 +1,83 @@
+export type BoardMember = {
+  name: string
+  role: string
+  bio: string
+  image?: string
+  chairman?: boolean
+  subtitle?: string
+}
+
+export type Leader = {
+  name: string
+  role: string
+  bio: string
+  image?: string
+}
+
+export const board: BoardMember[] = [
+  {
+    name: 'Chandita Samaranayake',
+    role: 'Chairman & Founder',
+    subtitle: 'Director, Connect to Care Global',
+    bio: 'Driving force behind Connect to Care — purpose-driven boutique consultancy creating mutual benefit for corporates, nonprofits and government partners across Sri Lanka and beyond.',
+    image: '/board/chandita-samaranayake.jpg',
+    chairman: true,
+  },
+  {
+    name: 'Damitha',
+    role: 'Director',
+    bio: 'Board leadership guiding governance, strategy and long-term direction for Connect to Care.',
+    image: '/board/damitha.jpg',
+  },
+  {
+    name: 'Rehan',
+    role: 'Director',
+    bio: 'Board leadership supporting institutional growth and partner stewardship.',
+    image: '/board/rehan.jpg',
+  },
+  {
+    name: 'Lakshi Nethicumara',
+    role: 'Director',
+    bio: 'Design and business leadership across hospitality; contributes financial audits and investment management to strengthen CTC operations.',
+    image: '/board/lakshi-nethicumara.jpg',
+  },
+  {
+    name: 'Anjali Nayyar',
+    role: 'Director',
+    bio: 'Executive VP at Global Health Strategies with 20+ years shaping health policy and integrated strategies across the global south.',
+    image: '/board/anjali-nayyar.jpg',
+  },
+]
+
+export const leadership: Leader[] = [
+  {
+    name: 'Emaali Gunasekara',
+    role: 'CEO',
+    bio: '15+ years in operations and marketing, driving purpose-driven initiatives at scale.',
+    image: '/team/emaali-gunasekara.jpg',
+  },
+  {
+    name: 'Laksiri Abeysekera',
+    role: 'Strategic Advisor',
+    bio: '40+ years in strategic financial management across Africa, Asia and the Middle East.',
+    image: '/team/laksiri-abeysekera.jpg',
+  },
+  {
+    name: 'Shazmina Faizer',
+    role: 'Head of Operations',
+    bio: 'Leads organisational effectiveness and operational delivery across all CTC programmes.',
+    image: '/team/shazmina-faizer.jpg',
+  },
+  {
+    name: 'Timothy John Millar',
+    role: 'Team Lead',
+    bio: 'Advocate for justice and human rights; bridges the institutional gap to catalyse positive social impact.',
+    image: '/team/timothy-john-millar.jpg',
+  },
+  {
+    name: 'Chandana Priyantha Arangalla',
+    role: 'Project Director — IDAT',
+    bio: "34+ years in national security and agricultural modernisation; leads Sri Lanka's IDAT programme.",
+    image: '/team/chandana-priyantha-arangalla.jpg',
+  },
+]
