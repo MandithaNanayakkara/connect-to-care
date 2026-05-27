@@ -62,6 +62,14 @@ export function Footer() {
           >
             <span className="site-footer__icon-label">ig</span>
           </TrackedLink>
+          <TrackedLink
+            href="https://www.facebook.com/connecttocareco/"
+            trackLabel="facebook_footer"
+            className="site-footer__icon"
+            aria-label="Facebook"
+          >
+            <span className="site-footer__icon-label">fb</span>
+          </TrackedLink>
         </div>
       </div>
     </footer>
