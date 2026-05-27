@@ -787,6 +787,7 @@
 
   .home-approach__diagram {
     max-width: 100%;
+    padding: 0.75rem;
   }
 
   .home-impact__header .btn {

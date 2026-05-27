@@ -135,9 +135,9 @@ export function EcosystemDiagram({ className = '', animated = true }: EcosystemD
           fontSize="14" fontWeight="700" fontFamily="Georgia, 'Times New Roman', serif">CTC</text>
         <text x={CX} y={CY + 4} textAnchor="middle" fill="#1a9e8f"
           fontSize="6" fontWeight="600" letterSpacing="2">PLATFORM</text>
-        <text x={CX} y={CY + 17} textAnchor="middle" fill="rgba(255,255,255,0.38)"
+        <text x={CX} y={CY + 17} className="eco-hub-sub" textAnchor="middle" fill="rgba(255,255,255,0.38)"
           fontSize="5.8">Convene · Catalyse</text>
-        <text x={CX} y={CY + 28} textAnchor="middle" fill="rgba(255,255,255,0.38)"
+        <text x={CX} y={CY + 28} className="eco-hub-sub" textAnchor="middle" fill="rgba(255,255,255,0.38)"
           fontSize="5.8">Coordinate · Connect</text>
 
         {/* ── Left (input) nodes ── */}
@@ -149,7 +149,7 @@ export function EcosystemDiagram({ className = '', animated = true }: EcosystemD
             <rect x={LEFT_X} y={n.y + 9} width={3} height={NODE_H - 18} rx={1.5} fill="#0d2137" />
             <text x={LEFT_X + 11} y={n.y + 19} fontSize="8.5" fontWeight="600" fill="#0d2137"
               fontFamily="system-ui, -apple-system, sans-serif">{n.label}</text>
-            <text x={LEFT_X + 11} y={n.y + 33} fontSize="7" fill="#7a8694"
+            <text x={LEFT_X + 11} y={n.y + 33} className="eco-sub" fontSize="7" fill="#7a8694"
               fontFamily="system-ui, -apple-system, sans-serif">{n.sub}</text>
             {/* anchor dot */}
             <circle cx={LEFT_X + NODE_W} cy={nc(n.y)} r="3" fill="#1a9e8f" />
@@ -165,7 +165,7 @@ export function EcosystemDiagram({ className = '', animated = true }: EcosystemD
             <rect x={RIGHT_X + NODE_W - 3} y={n.y + 9} width={3} height={NODE_H - 18} rx={1.5} fill="#1a9e8f" />
             <text x={RIGHT_X + 9} y={n.y + 19} fontSize="8.5" fontWeight="600" fill="#0d2137"
               fontFamily="system-ui, -apple-system, sans-serif">{n.label}</text>
-            <text x={RIGHT_X + 9} y={n.y + 33} fontSize="7" fill="#7a8694"
+            <text x={RIGHT_X + 9} y={n.y + 33} className="eco-sub" fontSize="7" fill="#7a8694"
               fontFamily="system-ui, -apple-system, sans-serif">{n.sub}</text>
             {/* anchor dot */}
             <circle cx={RIGHT_X} cy={nc(n.y)} r="3" fill="#0fd4b5" />
@@ -173,13 +173,13 @@ export function EcosystemDiagram({ className = '', animated = true }: EcosystemD
         ))}
 
         {/* ── Column labels ── */}
-        <text x={LEFT_X + NODE_W / 2} y={313} textAnchor="middle"
+        <text x={LEFT_X + NODE_W / 2} y={313} className="eco-col-label" textAnchor="middle"
           fill="#9ca8b4" fontSize="6" fontWeight="500" letterSpacing="0.08em"
           fontFamily="system-ui, -apple-system, sans-serif">INPUT STAKEHOLDERS</text>
-        <text x={CX} y={313} textAnchor="middle"
+        <text x={CX} y={313} className="eco-col-label" textAnchor="middle"
           fill="#1a9e8f" fontSize="6" fontWeight="600" letterSpacing="0.08em"
           fontFamily="system-ui, -apple-system, sans-serif">CATALYST</text>
-        <text x={RIGHT_X + NODE_W / 2} y={313} textAnchor="middle"
+        <text x={RIGHT_X + NODE_W / 2} y={313} className="eco-col-label" textAnchor="middle"
           fill="#9ca8b4" fontSize="6" fontWeight="500" letterSpacing="0.08em"
           fontFamily="system-ui, -apple-system, sans-serif">IMPACT AREAS</text>
       </svg>

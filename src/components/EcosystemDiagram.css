@@ -72,6 +72,19 @@
   animation-delay: var(--eco-node-delay, 0s);
 }
 
+/* ─── Mobile: hide small text, keep structure legible ─── */
+@media (max-width: 540px) {
+  .eco-sub,
+  .eco-hub-sub,
+  .eco-col-label {
+    display: none;
+  }
+
+  .ecosystem {
+    max-width: 100%;
+  }
+}
+
 /* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
   .eco-path {
