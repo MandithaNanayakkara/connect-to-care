@@ -676,7 +676,7 @@
 
 @media (max-width: 640px) {
   .nl-hero {
-    padding-top: calc(var(--header-height) + 3rem);
+    padding-top: calc(var(--header-height) + 2rem);
   }
 
   .nl-sidebar {
@@ -685,5 +685,34 @@
 
   .nl-hero__title {
     max-width: none;
+  }
+
+  .nl-hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nl-hero {
+    padding-top: calc(var(--header-height) + 1.5rem);
+  }
+
+  .nl-bottom-cta__card {
+    padding: 2rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .nl-bottom-cta__card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nl-masonry {
+    gap: 0.85rem;
+  }
+
+  .nl-hero__issue {
+    display: none;
   }
 }

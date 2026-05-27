@@ -775,9 +775,10 @@
     max-width: none;
   }
 
+  /* Keep stats in 3 columns — they're short numbers */
   .home-hero__stats {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
   }
 
   .home-approach__grid,
@@ -798,11 +799,69 @@
 
 @media (max-width: 640px) {
   .home-explore__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .home-hero__actions .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Stack outcomes / newsletter CTAs cleanly */
+  .home-outcomes-band,
+  .home-newsletter-band {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-outcomes-band__cta,
+  .home-newsletter-band__cta {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    padding-top: calc(var(--header-height) + 1rem);
+    padding-bottom: 2rem;
+  }
+
+  /* Hide the panel card on tiny screens to keep hero lean */
+  .home-hero__panel {
+    display: none;
+  }
+
+  /* Stats: still 3 col but tighten font */
+  .home-hero__stats {
+    gap: 0.5rem;
+  }
+
+  .home-hero-stat__value {
+    font-size: 1.35rem;
+  }
+
+  .home-hero-stat__label {
+    font-size: 0.68rem;
+  }
+
+  /* Explore cards: single column on smallest screens */
+  .home-explore__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Impact cards full padding */
+  .home-impact-card__body {
+    padding: 1rem 1.1rem 1.25rem;
+  }
+
+  /* Newsletter / outcomes bands: tighten inner padding */
+  .home-outcomes-band {
+    padding: 1.75rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .home-newsletter-band {
+    padding: 1.35rem 1.1rem;
+    border-radius: 14px;
   }
 }

@@ -20,6 +20,7 @@ body {
   color: var(--grey-700);
   background: var(--surface-page);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img {
@@ -252,4 +253,18 @@ main {
   .section-intro__aside {
     text-align: left;
   }
+}
+
+/* ─── Small-screen token overrides ─── */
+@media (max-width: 480px) {
+  :root {
+    --hero-title: 2rem;
+    --section-title: 1.8rem;
+    --section-pad-y: 2.75rem;
+  }
+}
+
+/* ─── Prevent horizontal scroll from wide elements ─── */
+html {
+  overflow-x: hidden;
 }

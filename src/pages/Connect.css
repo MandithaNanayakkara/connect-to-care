@@ -257,7 +257,7 @@
 
 @media (max-width: 600px) {
   .connect-hero {
-    padding-top: calc(var(--header-height) + 3rem);
+    padding-top: calc(var(--header-height) + 2rem);
   }
 
   .connect-form__split {
@@ -267,5 +267,23 @@
   .connect-contact-row {
     grid-template-columns: 1fr;
     gap: 0.25rem;
+  }
+
+  /* Full-width submit button on mobile */
+  .connect-form .btn--primary {
+    align-self: stretch;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .connect-details__title {
+    font-size: 1.6rem;
+  }
+
+  .newsletter-cta-card {
+    padding: 2rem 1.25rem;
+    border-radius: 18px;
   }
 }

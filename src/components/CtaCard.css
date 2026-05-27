@@ -23,3 +23,15 @@
   max-width: 32rem;
   margin: 0 auto 1.75rem;
 }
+
+@media (max-width: 640px) {
+  .cta-card {
+    padding: 2rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .cta-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

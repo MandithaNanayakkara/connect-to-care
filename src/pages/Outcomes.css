@@ -433,7 +433,46 @@
 @media (max-width: 640px) {
   .oc-hero {
     min-height: 22rem;
-    padding-top: calc(var(--header-height) + 3rem);
+    padding-top: calc(var(--header-height) + 2rem);
+  }
+
+  .oc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .oc-card--feature {
+    grid-column: span 2;
+  }
+
+  .oc-proof__card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .oc-hero {
+    min-height: 18rem;
+    padding-top: calc(var(--header-height) + 1.5rem);
+  }
+
+  /* Keep stats 3-col — short values */
+  .oc-stats__inner {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .oc-stat {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    padding: 1rem 0.4rem;
+  }
+
+  .oc-stat:last-child {
+    border-right: none;
+  }
+
+  .oc-stat__value {
+    font-size: 1.75rem;
   }
 
   .oc-grid {
@@ -444,8 +483,8 @@
     grid-column: auto;
   }
 
-  .oc-proof__card {
-    flex-direction: column;
-    align-items: flex-start;
+  .oc-ambition__card {
+    border-radius: 18px;
+    padding: 2rem 1.25rem;
   }
 }
