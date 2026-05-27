@@ -227,23 +227,6 @@ export function Home() {
         </div>
       </Reveal>
 
-      <Reveal as="section" className="home-outcomes section-pad">
-        <div className="container">
-          <Link to="/outcomes" className="home-outcomes-band">
-            <div className="home-outcomes-band__copy">
-              <p className="section-label section-label--light">Where it shows up</p>
-              <h2 className="display-title display-title--light">
-                Focus that strengthens lives and economies.
-              </h2>
-              <p className="home-outcomes-band__text">
-                Health, nutrition, agriculture, climate and more — toward one billion lives.
-              </p>
-            </div>
-            <span className="home-outcomes-band__cta">Explore focus →</span>
-          </Link>
-        </div>
-      </Reveal>
-
       <Reveal as="section" className="home-impact section-pad">
         <div className="container">
           <div className="home-impact__header">
@@ -275,6 +258,23 @@ export function Home() {
               </article>
             ))}
           </div>
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="home-outcomes section-pad">
+        <div className="container">
+          <Link to="/outcomes" className="home-outcomes-band">
+            <div className="home-outcomes-band__copy">
+              <p className="section-label section-label--light">Where it shows up</p>
+              <h2 className="display-title display-title--light">
+                Focus that strengthens lives and economies.
+              </h2>
+              <p className="home-outcomes-band__text">
+                Health, nutrition, agriculture, climate and more — toward one billion lives.
+              </p>
+            </div>
+            <span className="home-outcomes-band__cta">Explore focus →</span>
+          </Link>
         </div>
       </Reveal>
 
