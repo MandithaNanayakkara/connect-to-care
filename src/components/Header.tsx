@@ -11,7 +11,7 @@ const navItems = [
   { to: '/team', label: 'Team' },
   { to: '/impact', label: 'Impact' },
   { to: '/newsletter', label: 'Newsletter' },
-  { to: '/outcomes', label: 'Outcomes' },
+  { to: '/outcomes', label: 'Focus' },
 ]
 
 export function Header() {

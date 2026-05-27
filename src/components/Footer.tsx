@@ -23,7 +23,7 @@ export function Footer() {
           <Link to="/team">Team</Link>
           <Link to="/impact">Impact</Link>
           <Link to="/newsletter">Newsletter</Link>
-          <Link to="/outcomes">Outcomes</Link>
+          <Link to="/outcomes">Focus</Link>
           <Link to="/connect">Connect</Link>
         </nav>
 

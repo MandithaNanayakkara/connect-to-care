@@ -68,7 +68,7 @@ const impactCards = [
 
 const exploreLinks = [
   { to: '/about', label: 'Who we are' },
-  { to: '/outcomes', label: 'Outcomes' },
+  { to: '/outcomes', label: 'Focus' },
   { to: '/impact', label: 'Impact work' },
   { to: '/newsletter', label: 'Newsletter' },
 ]
@@ -239,7 +239,7 @@ export function Home() {
                 Health, nutrition, agriculture, climate and more — toward one billion lives.
               </p>
             </div>
-            <span className="home-outcomes-band__cta">Explore outcomes →</span>
+            <span className="home-outcomes-band__cta">Explore focus →</span>
           </Link>
         </div>
       </Reveal>
