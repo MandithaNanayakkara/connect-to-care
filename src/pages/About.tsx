@@ -90,7 +90,6 @@ export function About() {
               label="Sri Lanka"
               className="about-who__image"
             />
-            <div className="about-who__visual-accent" aria-hidden="true" />
           </div>
           <div className="about-who__content">
             <p className="section-label">Who we are</p>
