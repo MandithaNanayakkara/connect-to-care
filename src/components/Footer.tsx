@@ -55,7 +55,7 @@ export function Footer() {
             <span className="site-footer__icon-label">in</span>
           </TrackedLink>
           <TrackedLink
-            href="https://instagram.com/connect_to_care"
+            href="https://www.instagram.com/connecttocare.co?igsh=Y2lpZnk5b3kzM21v"
             trackLabel="instagram_footer"
             className="site-footer__icon"
             aria-label="Instagram"

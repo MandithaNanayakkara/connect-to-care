@@ -32,8 +32,8 @@ const contactRows = [
   {
     label: 'Instagram',
     content: (
-      <TrackedLink href="https://instagram.com/connect_to_care" trackLabel="instagram_connect">
-        @connect_to_care
+      <TrackedLink href="https://www.instagram.com/connecttocare.co?igsh=Y2lpZnk5b3kzM21v" trackLabel="instagram_connect">
+        @connecttocare.co
       </TrackedLink>
     ),
   },
