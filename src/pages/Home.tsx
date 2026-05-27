@@ -233,7 +233,7 @@ export function Home() {
             <div className="home-outcomes-band__copy">
               <p className="section-label section-label--light">Where it shows up</p>
               <h2 className="display-title display-title--light">
-                Outcomes that strengthen lives and economies.
+                Focus that strengthens lives and economies.
               </h2>
               <p className="home-outcomes-band__text">
                 Health, nutrition, agriculture, climate and more — toward one billion lives.
