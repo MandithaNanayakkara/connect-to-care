@@ -20,6 +20,7 @@ export const board: BoardMember[] = [
     role: 'Chairman & Founder',
     subtitle: 'Director, Connect to Care Global',
     bio: 'Driving force behind Connect to Care — purpose-driven boutique consultancy creating mutual benefit for corporates, nonprofits and government partners across Sri Lanka and beyond.',
+    image: 'team/Chandita.jpg',
     chairman: true,
   },
   {
@@ -41,6 +42,7 @@ export const board: BoardMember[] = [
     name: 'Anjali Nayyar',
     role: 'Director',
     bio: 'Executive VP at Global Health Strategies with 20+ years shaping health policy and integrated strategies across the global south.',
+    image: 'team/anjali.jpg',
   },
 ]
 
@@ -49,16 +51,19 @@ export const leadership: Leader[] = [
     name: 'Emaali Gunasekara',
     role: 'CEO',
     bio: '15+ years in operations and marketing, driving purpose-driven initiatives at scale.',
+    image: 'team/Emaali.jpg',
   },
   {
     name: 'Laksiri Abeysekera',
     role: 'Strategic Advisor',
     bio: '40+ years in strategic financial management across Africa, Asia and the Middle East.',
+    image: 'team/Laksiri.jpg',
   },
   {
     name: 'Shazmina Faizer',
     role: 'Head of Operations',
     bio: 'Leads organisational effectiveness and operational delivery across all CTC programmes.',
+    image: 'team/Shazmina.jpg',
   },
   {
     name: 'Timothy John Millar',
