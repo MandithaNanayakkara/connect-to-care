@@ -228,6 +228,15 @@ export function About() {
           </Link>
         </div>
       </Reveal>
+      <Reveal className="about-audited-accounts-link">
+        <div className="container">
+          <Link to="/audit-reports" className="about-audited-accounts-link__card">
+            <span className="about-audited-accounts-link__label">Audit Reports & Policies</span>
+            <span className="about-audited-accounts-link__title">See financial oversight →</span>
+          </Link>
+        </div>
+      </Reveal>
+      
 
       <CtaCard
         label="Work with us"

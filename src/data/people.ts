@@ -14,7 +14,9 @@ export type Leader = {
   image?: string
 }
 
-export const board: BoardMember[] = [
+const PEOPLE_STORAGE_KEY = 'connect-to-care-people-data'
+
+export const DEFAULT_BOARD: BoardMember[] = [
   {
     name: 'Chandita Samaranayake',
     role: 'Chairman & Founder',
@@ -46,7 +48,7 @@ export const board: BoardMember[] = [
   },
 ]
 
-export const leadership: Leader[] = [
+export const DEFAULT_LEADERSHIP: Leader[] = [
   {
     name: 'Emaali Gunasekara',
     role: 'CEO',
@@ -76,3 +78,40 @@ export const leadership: Leader[] = [
     bio: "34+ years in national security and agricultural modernisation; leads Sri Lanka's IDAT programme.",
   },
 ]
+
+function loadStoredPeopleData() {
+  if (typeof window === 'undefined') {
+    return { board: DEFAULT_BOARD, leadership: DEFAULT_LEADERSHIP }
+  }
+
+  const stored = window.localStorage.getItem(PEOPLE_STORAGE_KEY)
+  if (!stored) {
+    return { board: DEFAULT_BOARD, leadership: DEFAULT_LEADERSHIP }
+  }
+
+  try {
+    const parsed = JSON.parse(stored) as {
+      board?: BoardMember[]
+      leadership?: Leader[]
+    }
+
+    return {
+      board: Array.isArray(parsed.board) ? parsed.board : DEFAULT_BOARD,
+      leadership: Array.isArray(parsed.leadership) ? parsed.leadership : DEFAULT_LEADERSHIP,
+    }
+  } catch {
+    return { board: DEFAULT_BOARD, leadership: DEFAULT_LEADERSHIP }
+  }
+}
+
+export function getPeopleData() {
+  return loadStoredPeopleData()
+}
+
+export function savePeopleData(board: BoardMember[], leadership: Leader[]) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  window.localStorage.setItem(PEOPLE_STORAGE_KEY, JSON.stringify({ board, leadership }))
+}

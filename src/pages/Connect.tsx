@@ -2,6 +2,7 @@ import { useCallback, useState, type FormEvent } from 'react'
 import { Reveal } from '../components/Reveal'
 import { TrackedLink } from '../components/TrackedLink'
 import { isTurnstileEnabled, TurnstileField } from '../components/TurnstileField'
+import { appendContactMessage } from '../data/contactMessages'
 import './Connect.css'
 
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@connecttocare.co'
@@ -76,6 +77,16 @@ export function Connect() {
         body: data,
       })
       if (!res.ok) throw new Error()
+
+      appendContactMessage({
+        name: String(data.get('name') ?? ''),
+        organisation: String(data.get('organisation') ?? ''),
+        email: String(data.get('email') ?? ''),
+        role: String(data.get('role') ?? ''),
+        message: String(data.get('message') ?? ''),
+        submittedAt: new Date().toISOString(),
+      })
+
       setSubmitted(true)
       form.reset()
     } catch {

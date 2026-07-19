@@ -25,6 +25,7 @@ export function Footer() {
           <Link to="/newsletter">Newsletter</Link>
           <Link to="/outcomes">Focus</Link>
           <Link to="/connect">Connect</Link>
+          <Link to="/admin">Admin</Link>
         </nav>
 
         <div className="site-footer__col site-footer__connect">
