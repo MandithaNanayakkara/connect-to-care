@@ -1,10 +1,12 @@
 import { BoardPhoto } from '../components/BoardPhoto'
 import { CtaCard } from '../components/CtaCard'
 import { Reveal } from '../components/Reveal'
-import { board, leadership } from '../data/people'
+import { getPeopleData } from '../data/people'
 import './Team.css'
 
 export function Team() {
+  const { board, leadership } = getPeopleData()
+
   return (
     <div className="team-page">
       <header className="team-hero">

@@ -10,6 +10,7 @@ export type NewsletterArticle = {
   slug: string
   title: string
   excerpt: string
+  body?: string
   category: Exclude<NewsletterCategory, 'all'>
   date: string
   readTime: string
@@ -37,7 +38,9 @@ export const categories: { id: NewsletterCategory; label: string }[] = [
   { id: 'partnerships', label: 'Partnerships' },
 ]
 
-export const articles: NewsletterArticle[] = [
+const NEWSLETTER_STORAGE_KEY = 'connect-to-care-newsletter-data'
+
+export const DEFAULT_ARTICLES: NewsletterArticle[] = [
   {
     slug: 'rice-fortification-children',
     title: "Rice fortification: A game-changer for Sri Lanka's children",
@@ -146,7 +149,7 @@ export const articles: NewsletterArticle[] = [
   },
 ]
 
-export const projectSpotlights: ProjectSpotlight[] = [
+export const DEFAULT_PROJECT_SPOTLIGHTS: ProjectSpotlight[] = [
   {
     tag: 'Nutrition',
     title: 'Fortified rice → national policy',
@@ -166,3 +169,60 @@ export const projectSpotlights: ProjectSpotlight[] = [
     href: '/impact',
   },
 ]
+
+function loadStoredNewsletterData() {
+  if (typeof window === 'undefined') {
+    return {
+      articles: DEFAULT_ARTICLES,
+      projectSpotlights: DEFAULT_PROJECT_SPOTLIGHTS,
+    }
+  }
+
+  const stored = window.localStorage.getItem(NEWSLETTER_STORAGE_KEY)
+  if (!stored) {
+    return {
+      articles: DEFAULT_ARTICLES,
+      projectSpotlights: DEFAULT_PROJECT_SPOTLIGHTS,
+    }
+  }
+
+  try {
+    const parsed = JSON.parse(stored) as {
+      articles?: NewsletterArticle[]
+      projectSpotlights?: ProjectSpotlight[]
+    }
+
+    return {
+      articles: Array.isArray(parsed.articles) ? parsed.articles : DEFAULT_ARTICLES,
+      projectSpotlights: Array.isArray(parsed.projectSpotlights)
+        ? parsed.projectSpotlights
+        : DEFAULT_PROJECT_SPOTLIGHTS,
+    }
+  } catch {
+    return {
+      articles: DEFAULT_ARTICLES,
+      projectSpotlights: DEFAULT_PROJECT_SPOTLIGHTS,
+    }
+  }
+}
+
+export function getNewsletterData() {
+  return loadStoredNewsletterData()
+}
+
+export function saveNewsletterData(
+  articles: NewsletterArticle[],
+  projectSpotlights: ProjectSpotlight[],
+) {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  window.localStorage.setItem(
+    NEWSLETTER_STORAGE_KEY,
+    JSON.stringify({ articles, projectSpotlights }),
+  )
+}
+
+export const articles = DEFAULT_ARTICLES
+export const projectSpotlights = DEFAULT_PROJECT_SPOTLIGHTS

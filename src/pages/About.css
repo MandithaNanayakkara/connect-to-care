@@ -549,12 +549,16 @@
 }
 
 /* ─── Link to Team page ─── */
-.about-people-link {
+.about-people-link,
+.about-audited-accounts-link,
+.about-policies-link {
   padding-block: 0 1rem;
   background: var(--cream);
 }
 
-.about-people-link__card {
+.about-people-link__card,
+.about-audited-accounts-link__card,
+.about-policies-link__card {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -566,12 +570,16 @@
   transition: background 0.2s, transform 0.2s;
 }
 
-.about-people-link__card:hover {
+.about-people-link__card:hover,
+.about-audited-accounts-link__card:hover,
+.about-policies-link__card:hover {
   background: var(--navy-card);
   transform: translateY(-2px);
 }
 
-.about-people-link__label {
+.about-people-link__label,
+.about-audited-accounts-link__label,
+.about-policies-link__label {
   font-size: var(--label-size);
   font-weight: 500;
   letter-spacing: var(--label-spacing);
@@ -579,7 +587,9 @@
   color: var(--teal);
 }
 
-.about-people-link__title {
+.about-people-link__title,
+.about-audited-accounts-link__title,
+.about-policies-link__title {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: 1.35rem;

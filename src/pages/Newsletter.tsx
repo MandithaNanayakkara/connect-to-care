@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom'
 import { AboutImage } from '../components/AboutImage'
 import { Reveal } from '../components/Reveal'
 import {
-  articles,
   categories,
+  getNewsletterData,
   NEWSLETTER_URL,
-  projectSpotlights,
   type NewsletterCategory,
 } from '../data/newsletter'
 import './Newsletter.css'
@@ -21,6 +20,7 @@ const categoryLabels: Record<string, string> = {
 
 export function Newsletter() {
   const [activeCategory, setActiveCategory] = useState<NewsletterCategory>('all')
+  const { articles, projectSpotlights } = useMemo(() => getNewsletterData(), [])
 
   const featured = articles.find((a) => a.featured) ?? articles[0]
 
@@ -28,7 +28,7 @@ export function Newsletter() {
     const list = articles.filter((a) => !a.featured || a.slug !== featured.slug)
     if (activeCategory === 'all') return list
     return list.filter((a) => a.category === activeCategory)
-  }, [activeCategory, featured.slug])
+  }, [activeCategory, articles, featured.slug])
 
   return (
     <div className="newsletter-page">
@@ -69,12 +69,7 @@ export function Newsletter() {
       <Reveal as="section" className="nl-featured section-pad">
         <div className="container">
           <p className="section-label">Featured story</p>
-          <a
-            href={featured.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nl-featured-card"
-          >
+          <Link to={`/newsletter/${featured.slug}`} className="nl-featured-card">
             <div className="nl-featured-card__visual">
               <AboutImage
                 src={featured.image}
@@ -96,7 +91,7 @@ export function Newsletter() {
               )}
               <span className="nl-read-link">Read full story →</span>
             </div>
-          </a>
+          </Link>
         </div>
       </Reveal>
 
@@ -127,11 +122,9 @@ export function Newsletter() {
 
             <div className="nl-masonry">
               {filtered.map((article, i) => (
-                <a
+                <Link
                   key={article.slug}
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to={`/newsletter/${article.slug}`}
                   className={`nl-card${i % 5 === 0 ? ' nl-card--tall' : ''}${i % 3 === 1 ? ' nl-card--wide' : ''}`}
                 >
                   <div className="nl-card__visual">
@@ -155,7 +148,7 @@ export function Newsletter() {
                       <span className="nl-card__arrow">→</span>
                     </span>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
 
