@@ -42,7 +42,7 @@ export function Header() {
     <header
       className={[
         'site-header',
-        scrolled ? 'site-header--scrolled' : '',
+        scrolled && !menuOpen ? 'site-header--scrolled' : '',
         menuOpen ? 'site-header--menu-open' : '',
       ]
         .filter(Boolean)
