@@ -21,7 +21,7 @@ export function Team() {
             The board sets direction; our leadership team delivers programmes on the ground.
           </p>
           <nav className="team-hero__jump team-anim" style={{ animationDelay: '0.55s' }} aria-label="On this page">
-            <a href="#board">Board of directors</a>
+            <a href="#board">Board of Directors</a>
             <a href="#leadership">Leadership team</a>
           </nav>
         </div>
@@ -30,7 +30,7 @@ export function Team() {
       <Reveal as="section" id="board" className="team-board section-pad">
         <div className="container">
           <p className="section-label">Governance</p>
-          <h2 className="display-title team-section__headline">Board of directors.</h2>
+          <h2 className="display-title team-section__headline">Board of Directors.</h2>
           <p className="team-section__intro">
             Stewarding our mission and long-term direction — hover a portrait to read more.
           </p>
