@@ -34,11 +34,13 @@ export const DEFAULT_BOARD: BoardMember[] = [
     name: 'Rehan',
     role: 'Director',
     bio: 'Board leadership supporting institutional growth and partner stewardship.',
+    image: 'team/Rehan.jpg',
   },
   {
     name: 'Lakshi Nethicumara',
     role: 'Director',
     bio: 'Design and business leadership across hospitality; contributes financial audits and investment management to strengthen CTC operations.',
+    image: 'team/Lakshi.jpg',
   },
   {
     name: 'Anjali Nayyar',
@@ -71,6 +73,7 @@ export const DEFAULT_LEADERSHIP: Leader[] = [
     name: 'Timothy John Millar',
     role: 'Team Lead',
     bio: 'Advocate for justice and human rights; bridges the institutional gap to catalyse positive social impact.',
+    image: 'team/Tim.jpg',
   },
   {
     name: 'Chandana Priyantha Arangalla',
