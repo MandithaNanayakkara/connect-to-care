@@ -19,5 +19,5 @@ function githubPagesSpaFallback(): Plugin {
 export default defineConfig(({ command }) => ({
   plugins: [react(), ...(command === 'build' ? [githubPagesSpaFallback()] : [])],
   // Project site: https://MandithaNanayakkara.github.io/connect-to-care/
-  base: command === 'build' ? '/connect-to-care/' : '/',
+  base: '/',
 }))
